@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /usr/local/opt/rbenv/versions/2.1.5/bin/ruby -r ./siteconf20150729-483-1iy7hex.rb extconf.rb
+=======
+/usr/local/opt/rbenv/versions/2.1.5/bin/ruby -r ./siteconf20150729-410-vly582.rb extconf.rb
+>>>>>>> e5e64cbb136d35b2b1092129f29b8cc24f810369
 checking for sqlite3.h... yes
 checking for sqlite3_libversion_number() in -lsqlite3... yes
 checking for rb_proc_arity()... yes
@@ -25,5 +29,9 @@ compiling database.c
 linking shared-object sqlite3/sqlite3_native.so
 
 make "DESTDIR=" install
+<<<<<<< HEAD
 /usr/bin/install -c -m 0755 sqlite3_native.so ./.gem.20150729-483-1uy3w4m/sqlite3
+=======
+/usr/bin/install -c -m 0755 sqlite3_native.so ./.gem.20150729-410-7gvovq/sqlite3
+>>>>>>> e5e64cbb136d35b2b1092129f29b8cc24f810369
 installing default sqlite3_native libraries
