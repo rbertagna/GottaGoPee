@@ -1,19 +1,13 @@
 require_relative "../../config/environment"
 require_relative "../models/bathroom.rb"
+require "pry"
 
 
 class ApplicationController < Sinatra::Base
   
-  def index
-    if params[:bathroom].present?
-      @bathrooms = Bathroom.near(params[:search], 1, :order => :distance)
-    else
-      @bathrooms = Bathroom.all
-    end
-  end
-  
-  post '/map' do
-    "Hello World"
+  post '/map' do    
+    @location_array = Geocoder.coordinates(params[:location])
+    # binding.pry
     erb :show
   end
   
@@ -22,9 +16,13 @@ class ApplicationController < Sinatra::Base
   set :public, "public"
   
   get "/" do
+    # @bowlinggreen = Bathroom.create(:address => "11 broadway")
+    # if params[:bathroom].present?
+    #   # @bathrooms = Bathroom.near(params[:search], 1, :order => :distance)
+    # else
+    #   @bathrooms = Bathroom.all
+    # end
     erb :index
-
-
   end
 
   

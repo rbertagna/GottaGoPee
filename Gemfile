@@ -5,7 +5,7 @@ gem "sinatra"
 gem "activerecord"
 gem "sinatra-activerecord"
 gem "rake"
-gem 'geocoder', '~> 1.2.9'
+gem 'geocoder'
 
 group :development do
   gem "pry"

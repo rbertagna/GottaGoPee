@@ -3,12 +3,21 @@
   <title> Show </title>
 </head>
   
-<p>
+<!-- <p>
   <h3>Nearby location</h3>
   <ul>
-    <%for location in @location.nearbys(10)%>
+    <%#for location in @location.nearbys(10)%>
 
-      <li><%= link_to location.address, location%> (<%= location.distance.round(2)%>)</li>
-    <%end%>
+      <li><%#= link_to location.address, location%> (<%#= location.distance.round(2)%>)</li>
+    <%#end%>
   </ul>
-   <p>
+   <p> -->
+
+        <p> 
+
+          <% @location_array.each do |cord| %>
+            <%= cord %>
+          <% end %>
+
+
+        </p>
