@@ -1,19 +1,19 @@
 @import url(http://fonts.googleapis.com/css?family=Knewave);
 
-
-body {
-  background-image: url('http://i.imgur.com/jhCcuo4.jpg');
-  background-size: cover;
-  font-family: 'Knewave', cursive;
-  font-size: 100%;
-  overflow: hidden;
-  /*background-repeat: no-repeat;*/
-  background-position: 50% 50%;
+  body {
+    background-image: url(http://hdrny.com/wp-content/uploads/2012/08/Jul8-2012LibertyStPk-006-ed1.jpg); 
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-attachment: fixed;       
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
+     -webkit-background-size: cover;
 }
 
 h1 {
   font-size: 80px;
-  color: yellow;
+  color: #FFFA28;
   text-align: center;
   margin-top: 35px;
   margin-bottom: 80px;
