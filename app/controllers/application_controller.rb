@@ -1,16 +1,12 @@
 require_relative "../../config/environment"
 require_relative "../models/bathroom.rb"
 require "pry"
+require "open-uri"
+require "json"
+require "pp"
 
 
 class ApplicationController < Sinatra::Base
-  
-  post '/map' do    
-    @location_array = Geocoder.coordinates(params[:location])
-    # binding.pry
-    erb :show
-  end
-  
   
   set :views, "app/views"
   set :public, "public"
@@ -23,6 +19,23 @@ class ApplicationController < Sinatra::Base
     #   @bathrooms = Bathroom.all
     # end
     erb :index
+  end
+
+  post '/map' do    
+    @location_array = Geocoder.coordinates(params[:location])
+    # binding.pry
+    # data = JSON.parse(open("https://data.cityofnewyork.us/resource/hjae-yuav.json").read)
+    # data.each do |hash|
+    #   # puts hash
+    #   @latlong_array = Geocoder.coordinates(hash["location"])
+    #   if @latlong_array
+    #     Bathroom.create( :address => hash["location"], :open_year_round => hash["open_year_round"], :handicap => hash["handicap_accessible"], :borough => hash["borough"], :rating => nil, :latitude => @latlong_array[1], :longitude => @latlong_array[0])
+    #     sleep(1)
+    #   end
+    # end
+
+    puts Bathroom.near(@location_array, 1)
+    erb :show
   end
 
   
