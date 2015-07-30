@@ -11,25 +11,28 @@
       function initialize() {
         var mapOptions = {
           center: { lat: <%=@location_array[0]%>, lng: <%=@location_array[1]%>},
-          zoom: 16
+          zoom: 14
         };
         var map = new google.maps.Map(document.getElementById('map-canvas'),
             mapOptions);
         
         var myLatlng = new google.maps.LatLng(<%=@location_array[0]%>, <%=@location_array[1]%>);
-       var marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map,
-  });
-              <% @close_bathrooms_show.each do |bathrooom|%>
-        for (var i = 0; i < <% @close_bathrooms_show %>.length; i++) { 
-    var marker2 = new google.maps.Marker({
-                   position: new google.maps.LatLng(<%=@close_bathrooms_show[0]%>, <%=@close_bathrooms_show[1]%>),
-      map: map,
-}
-                 
-  });
+        var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map
+        });
+
+        <% @close_bathrooms_show.each do |bathroom|%>
+
+          myLatlng = new google.maps.LatLng(<%=bathroom[1]%>, <%=bathroom[0]%>);
+          marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map
+          });
         <% end %>
+
+
+
       }
   
        
