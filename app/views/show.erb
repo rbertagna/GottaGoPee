@@ -23,16 +23,16 @@
         });
 
         <% @close_bathrooms_show.each do |bathroom|%>
-
-          myLatlng = new google.maps.LatLng(<%=bathroom[1]%>, <%=bathroom[0]%>);
-          marker = new google.maps.Marker({
-          position: myLatlng,
-          map: map
-          });
+          var iconBase = 'https://jira.appcelerator.org/secure/attachment/35489/map-pin.png';
+          var icons = {
+              bathroom: {
+              marker: new google.maps.Marker({
+                position: new google.maps.LatLng(<%=bathroom[1]%>, <%=bathroom[0]%>),
+                map: map,
+                icon: iconBase
+              })
+          }};
         <% end %>
-
-
-
       }
   
        
@@ -42,20 +42,7 @@
     <title> Show </title>
   </head>
   <body>
-    <p> 
 
-      <% @location_array.each do |cord| %>
-        <%= cord %>
-      <% end %>
-
-
-    </p>
-
-    <ul>
-      <% @close_bathrooms_show.each do |address| %>
-        <li> <%= address %> </li>
-      <% end %>
-    </ul>
 <div id="map-canvas"></div>
   </body>
 </html>
