@@ -1,16 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Knewave);
 
-<<<<<<< HEAD
-
-body {
-  background-image: url('http://i.imgur.com/jhCcuo4.jpg');
-  background-size: cover;
-  font-family: 'Knewave', cursive;
-  font-size: 100%;
-  overflow: hidden;
-  /*background-repeat: no-repeat;*/
-  /*background-position: 50% 50%;*/
-=======
   body {
     background-image: url(http://i.ytimg.com/vi/ke65_TBC99I/maxresdefault.jpg); 
     background-repeat: no-repeat; 
@@ -19,13 +8,12 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover; 
-     -webkit-background-size: cover;
->>>>>>> 3c39abe3a6e14b8133a377a1c5829092faa2a7a9
+    -webkit-background-size: cover;
 }
 
 h1 {
   font-size: 80px;
-  font-family: cursive;
+  font-family: Knewave, cursive;
   color: #FFFA28;
   text-align: center;
   margin-top: 35px;

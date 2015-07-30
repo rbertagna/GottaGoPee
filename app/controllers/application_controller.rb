@@ -34,7 +34,12 @@ class ApplicationController < Sinatra::Base
     #   end
     # end
 
-    puts Bathroom.near(@location_array, 1)
+    @close_bathrooms = Bathroom.near(@location_array, 1)
+    @close_bathrooms_show = []
+    @close_bathrooms.each do |bathroom|
+      
+      @close_bathrooms_show << bathroom.address
+    end
     erb :show
   end
 
