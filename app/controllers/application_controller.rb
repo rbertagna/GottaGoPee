@@ -33,6 +33,7 @@ class ApplicationController < Sinatra::Base
     #     sleep(1)
     #   end
     # end
+<<<<<<< HEAD
     starbucks = JSON.parse(open("https://opendata.socrata.com/resource/ddym-zvjk.json").read)
     starbucks.each do |hash|
       # puts hash
@@ -44,6 +45,16 @@ class ApplicationController < Sinatra::Base
         end
       end
     end
+=======
+#     starbucks = JSON.parse(open("https://opendata.socrata.com/api/views/ddym-zvjk/rows.json").read)
+#     starbucks.each do |hash|
+#      # puts hash
+#      if hash["state"] == "NY"
+#       Bathroom.new( :address => hash["location"]["human_address"]["address"], :open_year_round => "yes", :handicap => "unknown", :borough => hash["location"]["human_address"]["city"], :rating => nil, :latitude => hash["location"]["latitude"], :longitude => hash["location"]["longitude"])
+#       sleep(1)
+#       end
+#     end
+>>>>>>> 6a6d9785ada062b7fff39275e1a3abf89495a3ea
 
     @close_bathrooms = Bathroom.near(@location_array, 1)
     @close_bathrooms_show = []
