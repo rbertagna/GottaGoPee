@@ -10,12 +10,30 @@
     <script type="text/javascript">
       function initialize() {
         var mapOptions = {
-          center: { lat: 40.78, lng: -73.96},
-          zoom: 12
+          center: { lat: <%=@location_array[0]%>, lng: <%=@location_array[1]%>},
+          zoom: 16
         };
         var map = new google.maps.Map(document.getElementById('map-canvas'),
             mapOptions);
+        
+        var myLatlng = new google.maps.LatLng(<%=@location_array[0]%>, <%=@location_array[1]%>);
+       var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+  });
+              <% @close_bathrooms_show.each do |bathrooom|%>
+        for (var i = 0; i < <% @close_bathrooms_show %>.length; i++) { 
+    var marker2 = new google.maps.Marker({
+                   position: new google.maps.LatLng(<%=@close_bathrooms_show[0]%>, <%=@close_bathrooms_show[1]%>),
+      map: map,
+}
+                 
+  });
+        <% end %>
       }
+  
+       
+      
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
     <title> Show </title>
