@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Knewave);
 
+<<<<<<< HEAD
 
 body {
   background-image: url('http://i.imgur.com/jhCcuo4.jpg');
@@ -9,11 +10,23 @@ body {
   overflow: hidden;
   /*background-repeat: no-repeat;*/
   /*background-position: 50% 50%;*/
+=======
+  body {
+    background-image: url(http://i.ytimg.com/vi/ke65_TBC99I/maxresdefault.jpg); 
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-attachment: fixed;       
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
+     -webkit-background-size: cover;
+>>>>>>> 3c39abe3a6e14b8133a377a1c5829092faa2a7a9
 }
 
 h1 {
   font-size: 80px;
-  color: yellow;
+  font-family: cursive;
+  color: #FFFA28;
   text-align: center;
   margin-top: 35px;
   margin-bottom: 80px;
