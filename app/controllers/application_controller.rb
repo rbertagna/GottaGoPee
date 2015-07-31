@@ -1,6 +1,6 @@
 require_relative "../../config/environment"
 require_relative "../models/bathroom.rb"
-require "pry"
+# require "pry"
 require "open-uri"
 require "json"
 require "pp"
