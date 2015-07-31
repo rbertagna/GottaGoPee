@@ -1,3 +1,6 @@
+require 'open-uri'
+require 'json'
+
 data = JSON.parse(open("https://data.cityofnewyork.us/resource/hjae-yuav.json").read)
     data.each do |hash|
       # puts hash
