@@ -9,6 +9,7 @@ gem 'geocoder'
 gem 'pg'
 gem 'thin'
 
+
 group :development do
   gem "pry"
   gem "shotgun"
