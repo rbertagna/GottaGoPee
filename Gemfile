@@ -7,6 +7,7 @@ gem "sinatra-activerecord"
 gem "rake"
 gem 'geocoder'
 gem 'pg'
+gem 'thin'
 
 group :development do
   gem "pry"
