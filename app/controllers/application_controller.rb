@@ -23,38 +23,32 @@ class ApplicationController < Sinatra::Base
 
   post '/map' do    
     @location_array = Geocoder.coordinates(params[:location])
-    # binding.pry
     # data = JSON.parse(open("https://data.cityofnewyork.us/resource/hjae-yuav.json").read)
     # data.each do |hash|
     #   # puts hash
     #   @latlong_array = Geocoder.coordinates(hash["location"])
     #   if @latlong_array
-    #     Bathroom.create( :address => hash["location"], :open_year_round => hash["open_year_round"], :handicap => hash["handicap_accessible"], :borough => hash["borough"], :rating => nil, :latitude => @latlong_array[1], :longitude => @latlong_array[0])
+    #     puts Bathroom.create( :address => hash["location"], :open_year_round => hash["open_year_round"], :handicap => hash["handicap_accessible"], :borough => hash["borough"], :rating => nil, :latitude => @latlong_array[1], :longitude => @latlong_array[0])
     #     sleep(1)
     #   end
     # end
-<<<<<<< HEAD
-    starbucks = JSON.parse(open("https://opendata.socrata.com/resource/ddym-zvjk.json").read)
-    starbucks.each do |hash|
-      # puts hash
-      if hash['state']
-        if hash["state"] == "NY"
-          binding.pry
-          puts Bathroom.create( :address => hash["location"]["human_address"]["address"], :open_year_round => "yes", :handicap => "unknown", :borough => hash["location"]["human_address"]["city"], :rating => nil, :latitude => hash["location"]["latitude"], :longitude => hash["location"]["longitude"])
-          sleep(1)
-        end
-      end
-    end
-=======
-#     starbucks = JSON.parse(open("https://opendata.socrata.com/api/views/ddym-zvjk/rows.json").read)
-#     starbucks.each do |hash|
-#      # puts hash
-#      if hash["state"] == "NY"
-#       Bathroom.new( :address => hash["location"]["human_address"]["address"], :open_year_round => "yes", :handicap => "unknown", :borough => hash["location"]["human_address"]["city"], :rating => nil, :latitude => hash["location"]["latitude"], :longitude => hash["location"]["longitude"])
-#       sleep(1)
-#       end
-#     end
->>>>>>> 6a6d9785ada062b7fff39275e1a3abf89495a3ea
+    # starbucks = JSON.parse(open("https://opendata.socrata.com/resource/ddym-zvjk.json").read)
+    # starbucks.each do |hash|
+    #   # puts hash
+    #   if hash['state']
+    #     if hash["state"] == "NY"
+    #       # binding.pry
+    #       # @latlong_array = Geocoder.coordinates(hash["location"]["human_address"])
+    #       # binding.pry
+    #       # if @latlong_array
+    #         puts Bathroom.create( :address => hash["street_address"], :open_year_round => "yes", :handicap => "unknown", :borough => hash["location"]["human_address"]["city"], :rating => nil, :latitude => hash["latitude"], :longitude => hash["longitude"])
+    #       # end
+    #       # Bathroom.last.longitude = hash["location"]["longitude"]
+    #       # puts Bathroom.last.longitude
+    #       # sleep(1)
+    #     end
+    #   end
+    # end
 
     @close_bathrooms = Bathroom.near(@location_array, 1)
     @close_bathrooms_show = []
