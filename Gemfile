@@ -6,6 +6,7 @@ gem "activerecord"
 gem "sinatra-activerecord"
 gem "rake"
 gem 'geocoder'
+gem 'pg'
 
 group :development do
   gem "pry"
