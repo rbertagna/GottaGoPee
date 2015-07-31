@@ -20,12 +20,9 @@ class ApplicationController < Sinatra::Base
     # end
     erb :index
   end
+  
 
-<<<<<<< HEAD
-  post '/map' do    
-=======
   post '/map' do
->>>>>>> 63fa3397a2cd02f5c4d8a18df63745f723acdb9c
     @location_array = Geocoder.coordinates(params[:location])
     # data = JSON.parse(open("https://data.cityofnewyork.us/resource/hjae-yuav.json").read)
     # data.each do |hash|
