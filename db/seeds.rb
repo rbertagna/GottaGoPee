@@ -1,6 +1,6 @@
 require 'open-uri'
 require 'json'
-require_relative "../models/bathroom.rb"
+require_relative "../app/models/bathroom.rb"
 
 data = JSON.parse(open("https://data.cityofnewyork.us/resource/hjae-yuav.json").read)
     data.each do |hash|
