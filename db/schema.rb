@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150729150238) do
+ActiveRecord::Schema.define(version: 20150821024211) do
 
   create_table "bathrooms", force: :cascade do |t|
     t.string "address"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150729150238) do
     t.float  "rating"
     t.float  "latitude"
     t.float  "longitude"
+    t.string "title"
   end
 
 end

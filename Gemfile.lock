@@ -74,6 +74,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  arel
   geocoder
   pg
   pry

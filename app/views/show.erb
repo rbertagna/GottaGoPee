@@ -22,35 +22,59 @@
         position: myLatlng,
         map: map
         });
+        var icons = {};
 
         <% @close_bathrooms_show.each do |bathroom|%>
+
           var iconBase = 'https://jira.appcelerator.org/secure/attachment/35489/map-pin.png';
-          var icons = {
-              bathroom: {
+          var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            "<h1 id='firstHeading' class='firstHeading'><%= bathroom[2] %></h1>"+
+            '<div id="bodyContent">'+
+            '<p> <%= bathroom[3]%> ' +
+            '</p>'+
+            '</div>'+
+            '</div>';
+
+            icons["<%=bathroom[3].to_s.delete ' '%>"] = {
               marker: new google.maps.Marker({
                 position: new google.maps.LatLng(<%=bathroom[1]%>, <%=bathroom[0]%>),
                 map: map,
-                icon: iconBase
+                icon: iconBase,
+                title: 'Uluru (Ayers Rock)',
+                infowindow: new google.maps.InfoWindow({
+                  content: contentString
+                })
               })
-          }};
+              
+          };
+
           var service = new google.maps.places.PlacesService(map);
 
         var request = {
     placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4'
   };
         
-  service.getDetails(request, function(place, status) {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-      var marker = new google.maps.Marker({
-        map: map,
-        position: place.geometry.location
-      });
-      google.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent(place.address);
-        infowindow.open(map, this);
-      });
-    }
+
+  // var bathroom_id = <%=bathroom[4].to_s %>
+
+  // infowindow = new google.maps.InfoWindow({
+  //     content: contentString
+  // });
+
+  // var marker1 = new google.maps.Marker({
+  //     position: myLatlng,
+  //     map: map,
+  //     title: 'Uluru (Ayers Rock)'
+  // });
+  
+  google.maps.event.addListener(icons["<%=bathroom[3].delete ' '%>"]["marker"], 'click', function() {
+    icons["<%=bathroom[3].delete ' '%>"]["marker"]["infowindow"].open(map,icons["<%=bathroom[3].delete ' '%>"]["marker"]);
   });
+
+  console.log(icons)
+
         <% end %>
       }
       
